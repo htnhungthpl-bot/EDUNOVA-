@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      // Fix for environments/extensions attempting to override window.fetch when it has only a getter
+      (function() {
+        try {
+          var _rawFetch = window.fetch;
+          var _currentFetch = function() {
+            return (_rawFetch || fetch).apply(this, arguments);
+          };
+          Object.defineProperty(window, 'fetch', {
+            get: function() {
+              return _currentFetch;
+            },
+            set: function(fn) {
+              _currentFetch = fn;
+            },
+            configurable: true,
+            enumerable: true
+          });
+        } catch (e) {
+          console.warn('Could not configure window.fetch setter:', e);
+        }
+      })();
+    </script>
+    <title>EduNova Writing Coach - Viết Hay Hơn Mỗi Ngày</title>
+    <meta name="description" content="Trợ lý AI đồng hành cùng học sinh lớp 4 phát triển kỹ năng viết tiếng Việt theo lộ trình sư phạm: Luyện câu, luyện đoạn, luyện bài văn, đánh giá Rubric 4 mức và trò chơi ngôn ngữ bổ ích." />
+    <meta property="og:title" content="EduNova Writing Coach - Viết Hay Hơn Mỗi Ngày" />
+    <meta property="og:description" content="Trợ lý AI đồng hành cùng học sinh lớp 4 phát triển kỹ năng viết tiếng Việt theo lộ trình sư phạm: Luyện câu, luyện đoạn, luyện bài văn, đánh giá Rubric 4 mức và trò chơi ngôn ngữ bổ ích." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&family=Nunito:wght@400;500;600;700;800;900&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-slate-50 font-['Be_Vietnam_Pro','Nunito',sans-serif] text-slate-800 antialiased selection:bg-emerald-100 selection:text-emerald-900">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

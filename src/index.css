@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+@layer base {
+  html, body {
+    font-family: 'Be Vietnam Pro', 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: "cv01", "cv02", "calt", "liga";
+  }
+
+  /* Đảm bảo toàn bộ khung gõ chữ, textarea, input không bị mất dấu thanh hay nhảy font */
+  input, textarea, select, button {
+    font-family: 'Be Vietnam Pro', 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  textarea {
+    line-height: 1.75;
+    word-break: break-word;
+  }
+}
+
+/* Lớp hỗ trợ gõ bài viết văn tiểu học không lo lỗi dấu */
+.vietnamese-essay-text {
+  font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  line-height: 1.8;
+  letter-spacing: 0.01em;
+}
+
+/* Định dạng in ấn đẹp mắt khi xuất hoặc in phiếu nhận xét */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  header, nav, button, .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+}

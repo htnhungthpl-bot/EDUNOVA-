@@ -1,0 +1,8 @@
+{
+  "name": "EduNova Writing Coach - Viết Hay Hơn Mỗi Ngày",
+  "description": "Trợ lý AI đồng hành cùng học sinh lớp 4 phát triển kỹ năng viết tiếng Việt theo lộ trình sư phạm: Luyện câu, luyện đoạn, luyện bài văn, đánh giá Rubric 4 mức và trò chơi ngôn ngữ bổ ích.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
